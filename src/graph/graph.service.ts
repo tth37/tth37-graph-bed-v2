@@ -38,6 +38,7 @@ export class GraphService {
     const name = uuid() + "." + getImageType(file);
     try {
       await this.fileService.uploadFile(name, file);
+      return name;
     } catch (e) {
       throw new BadRequestException();
     }
